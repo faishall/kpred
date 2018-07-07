@@ -1,1 +1,2 @@
 # kpred
+projek mas 	tegu
