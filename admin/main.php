@@ -1,5 +1,5 @@
 <?php 
-$koneksi = new mysqli("localhost","root","","kpredforce");
+include 'config/koneksi.php';
 session_start();
 if(empty($_SESSION['username']) AND empty ($_SESSION['password']))
 {
@@ -345,6 +345,10 @@ else
                     elseif ($_GET['halaman']=="logout") 
                     {
                         include 'logout.php';
+                    }
+                    elseif ($_GET['halaman']=="laporan") 
+                    {
+                        include 'laporan.php';
                     }
                 }
                 else
