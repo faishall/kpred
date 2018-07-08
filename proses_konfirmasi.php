@@ -15,13 +15,30 @@ if (isset($_POST['konfirm'])){
 	$pembayaran=mysqli_query($koneksi, "INSERT INTO tbl_bayar (id_pembayaran, id_transaksi, id_customer, gambar, nama_pengirim, bank_asal, no_rekening, bank_tujuan, nominal, tgl_bayar) VALUES ('$id_pembayaran', '$id', '$_SESSION[id]', '$namafile', '$nm_pengirim', '$bank_asal', '$no_rek', '$bank_tujuan', '$jml', '$tgl')");
 	move_uploaded_file($_FILES['bukti']['tmp_name'],$unduhfile);
 
-	$konfirmasi=mysqli_query($koneksi, "UPDATE dtl_transaksi SET status_bayar='Sudah terbayar' WHERE id_det_transaksi='$id'");
+	$view = mysqli_query($koneksi, "SELECT * FROM tbl_transaksi WHERE id_det_transaksi='$id'");
+	$row = $view->fetch_array();
 
-/*apliaksi*/
+	$barang = mysqli_query($koneksi, "SELECT * FROM tbl_barang WHERE id_barang='$row[id_barang]'");
+	$rxx = $barang->fetch_array();
+
+	$dtl_transaksi = mysqli_query($koneksi, "SELECT * FROM tbl_transaksi WHERE id_det_transaksi='$id'");
+	$dtl = $dtl_transaksi->fetch_array(); 
+
+
+	$stok1 = $dtl['kuantitas'];
+	$stok2 = $rxx['stok'];
+	$stok = $stok2 - $stok1 ;
+
+	mysqli_query($koneksi, "UPDATE tbl_barang SET stok='$stok' WHERE id_barang='$row[id_barang]'");
+	
+
+	$konfirmasi=mysqli_query($koneksi, "UPDATE dtl_transaksi SET status_bayar='Sudah Terbayar' WHERE id_det_transaksi='$id'");
+
+	/*apliaksi*/
 
 	
-	echo "<script>alert('Pembayaran Berhasil Dikonfirmasi');</script>";
-	echo "<meta http-equiv='refresh' content='../'>";
+	echo "<script>alert('Pembayaran Berhasil Dikonfirmasi');window.location = 'index.php';</script>";
+	// header("location:index.");
 
 
 }
