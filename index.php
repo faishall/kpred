@@ -2,8 +2,17 @@
 error_reporting(0);
   require_once("admin/config/koneksi.php");
         session_start();
-    
+
+    $rex=mysqli_query($koneksi,"SELECT * FROM dtl_transaksi WHERE nama ='$_SESSION[nama]' AND   status_bayar='Belum Dibayar'");
+    $jo=mysqli_fetch_array($rex);
+
+    if ($jo['id_det_transaksi'] == true) {
+      header('location:detail_transaksi.php?transaksi='.$jo['id_det_transaksi'].'');
+      exit;
+    }
+
 ?>
+<a href=""></a>
 <!DOCTYPE html>
 <html>
 <head>

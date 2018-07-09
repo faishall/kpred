@@ -1,6 +1,6 @@
 <?php 
 
-$koneksi = new mysqli("localhost","root","","kpredforce");
+include 'admin/config/koneksi.php';
 	$id_barang = $_GET['id'];
 
 	$view = mysqli_query($koneksi, "SELECT * FROM tbl_barang WHERE id_barang='$id_barang'");

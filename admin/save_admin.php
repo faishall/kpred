@@ -1,5 +1,5 @@
 <?php
-include "../config/koneksi.php";
+include "config/koneksi.php";
 
 
 $cari=mysqli_query($koneksi, "SELECT * FROM admin WHERE username='$_POST[username]'");

@@ -1,5 +1,5 @@
 <?php 
-$koneksi = new mysqli("localhost","root","","kpredforce");
+require_once("admin/config/koneksi.php");
 session_start();
  ?>
 <!DOCTYPE html>

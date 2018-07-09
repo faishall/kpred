@@ -100,7 +100,7 @@
                         <div class="col-sm-6">
                         <div class="panel-heading">
                           <!-- <h4 class="panel-title"><i class="fa fa-user"></i> PILIH ONGKIR</h4> -->
-                          </div>
+<!--                           </div>
                           <div class="panel-body">
                           <fieldset id="account">
                             
@@ -259,7 +259,7 @@
                             <input type="hidden" name="trans" value="<?php echo $_GET['transaksi']; ?>">
                           </fieldset>
                         </div>  
-                      </div>
+                      </div> -->
                       
                         <!-- AKHIR ONGKIR -->
                         <!-- ALAMAT -->
@@ -272,7 +272,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <fieldset id="info-alamat">
-                                      <div class="form-group required">
+                                      <!-- <div class="form-group required">
 			                              <label for="input-payment-fax" class="control-label">Bank Tujuan</label>
 			                              <select type="text" name="bank-tujuan" class="form-control">
 			                              <option>--Pilih Bank--</option>
@@ -280,13 +280,15 @@
 												<option>PT. BANK MANDIRI (PERSERO) Tbk.</option>
 												<option>PT. BANK CENTRAL ASIA Tbk.</option>
 			                              </select>
-			                            </div>
+			                            </div> -->
+			                            <input type="hidden" name="trans" value="<?php echo $_GET['transaksi']; ?>">
+			                            Silahkan Uplod
 			                            <div class="form-group required">
-			                              <label for="input-payment-fax" class="control-label">Bukti Transfer</label>
-			                              <input type="file" name="bukti" class="form-control" accept="image/*">
+			                              <label for="input-payment-fax" class="control-label">Bukti Pembayaran</label>
+			                              <input type="file" name="bukti" class="form-control" accept="image/*" required>
 			                            </div>
                                       </fieldset>
-                                      <input type="submit" name="konfirm" class="form-control btn-primary" value="Konfirmasi">
+                                      <input type="submit" name="konfirm" class="form-control btn-primary" value="Upload">
                                       
                                     </div>  
                                 </form>

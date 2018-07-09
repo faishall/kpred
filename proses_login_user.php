@@ -1,6 +1,6 @@
 <?php
 // error_reporting(0);
-$koneksi = new mysqli("localhost","root","","kpredforce");
+include 'admin/config/koneksi.php';
 // include_once 'admin/config/koneksi.php';
 	$pass=$_POST['pass'];
 	$pass1=md5($pass);

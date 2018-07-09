@@ -1,6 +1,6 @@
 <?php 
 
-$koneksi = new mysqli("localhost","root","","rentalmobil");
+include 'admin/config/koneksi.php';
 	$id_produk = $_GET['id'];
 
 	$sql = "DELETE FROM transaksi WHERE id_transaksi='$_GET[id]'";

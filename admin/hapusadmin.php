@@ -1,6 +1,6 @@
  <?php 
 
-$koneksi = new mysqli("localhost","root","","kpredforce");
+include 'admin/config/koneksi.php';
 	$username = $_GET['username'];
 
 	$sql = "DELETE FROM tbl_admin WHERE username='$_GET[username]'";

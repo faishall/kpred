@@ -226,7 +226,8 @@
                             if (!empty($konfirm) AND $kon['status_bayar']=='Belum Dibayar') {
                             ?>
                             <span><a href="pembayaran.php?transaksi=<?php echo $_GET['transaksi'] ?>" class="btn btn-primary">KONFIRMASI PEMBAYARAN</a></span>
-                            <?php }?>
+                            <?php }?><br><br>
+                            <a href="del.php?del=<?echo $_GET['transaksi']?>" class="btn btn-primary">BATAL PEMBAYARAN</a>
                           </td>
                         </tr>
                       </tbody>

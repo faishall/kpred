@@ -1,5 +1,5 @@
 <?php 
-$koneksi = new mysqli("localhost","root","","rentalmobil");
+include 'admin/config/koneksi.php';
 
 $a=$_POST['hs'];
 $b=$_POST['dr'];

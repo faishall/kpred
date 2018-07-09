@@ -1,5 +1,5 @@
 <?php
-$koneksi = new mysqli("localhost","root","","kpredforce");
+include 'admin/config/koneksi.php';
 	$pass=$_POST['password'];
 	$pass1=md5($pass);
 	$login=mysqli_query($koneksi, "SELECT * FROM tbl_admin WHERE username='$_POST[username]' AND password='$pass1'");

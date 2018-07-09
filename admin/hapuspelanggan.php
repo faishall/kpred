@@ -1,6 +1,6 @@
 <?php 
 
-$koneksi = new mysqli("localhost","root","","kpredforce");
+include 'admin/config/koneksi.php';
 	$id_customer = $_GET['id'];
 
 	$sql = "DELETE FROM tbl_customer WHERE id_customer='$_GET[id]'";

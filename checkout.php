@@ -210,7 +210,7 @@ error_reporting(0);
                             
                             <div class="form-group required">
                               <label for="input-payment-fax" class="control-label">Provinsi</label>
-                              <select class="form-control" name="provinsi" id="provinsi" onchange="fKota()" style="width: 100%;">
+                              <select class="form-control" name="provinsi" id="provinsi" onchange="fKota()" style="width: 100%;" required/>
                                 <option>Pilih Provinsi Tujuan</option>
                                 <?php 
                                 $provinsi=mysqli_query($koneksi,"SELECT id_provinsi, nama_daerah FROM tbl_daerah WHERE id_kota='0'");
@@ -221,7 +221,7 @@ error_reporting(0);
                             </div>
                             <div class="form-group required">
                               <label for="input-payment-fax" class="control-label">Kabupaten/Kota</label>
-                              <select class="form-control" name="kabupaten" id="kabupaten">
+                              <select class="form-control" name="kabupaten" id="kabupaten" required/>
                                 <option>Pilih Kota Tujuan</option>
                               </select>
                             </div>
@@ -243,11 +243,11 @@ error_reporting(0);
                                       <fieldset id="info-alamat">
                                       <div class="form-group required">
                                         <label for="input-payment-username" class="control-label">Alamat</label>
-                                        <textarea class="form-control" id="alamat" placeholder="Alamat Lengkap" value="" name="alamat" ></textarea>
+                                        <textarea class="form-control" id="alamat" placeholder="Alamat Lengkap" value="" name="alamat" required></textarea>
                                       </div>
                                       <div class="form-group required">
                                         <label for="input-payment-name" class="control-label">Kode Pos</label>
-                                        <input type="text" class="form-control" id="kodepos" placeholder="Kode Pos" value="" name="kodepos" >
+                                        <input type="text" class="form-control" id="kodepos" placeholder="Kode Pos" value="" name="kodepos" required/>
                                       </div>
                                         
                                       </fieldset>
@@ -260,7 +260,7 @@ error_reporting(0);
                                       <fieldset id="info-alamat">
                                         <div class="form-group required"  id="cek">
                                           <label for="input-payment-name" class="control-label">Kurir</label>
-                                          <select class="form-control" name="kurir" id="kurir">
+                                          <select class="form-control" name="kurir" id="kurir" required/>
                                           <option value="">Pilih Kurir</option>
                                           <option value="jne">JNE</option>
                                           <option value="tiki">TIKI</option>
