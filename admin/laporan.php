@@ -1,4 +1,4 @@
-<h1>Laporan Transaksi</h1>
+
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -12,21 +12,18 @@
 	</thead>
 	<tbody>
 
-
-		
 		<?php $no=0; 
 		$get = $_GET['bln'];
 		$date = date('/m');
 		if ($get == true) {
 
-			$kuantitas=$koneksi->query("SELECT * ,SUM(kuantitas)as kuk,SUM(total)as tot, date_format(tgl_transaksi,'%Y %M') as cek FROM tbl_transaksi INNER JOIN tbl_barang ON tbl_transaksi.id_barang=tbl_barang.id_barang WHERE MONTH(tgl_transaksi)='$get' GROUP BY nama_barang");
+			$kuantitas=$koneksi->query("SELECT * ,SUM(kuantitas)as kuk,SUM(total)as tot, date_format(tgl_transaksi,'%d %M %Y') as cek FROM tbl_transaksi INNER JOIN tbl_barang ON tbl_transaksi.id_barang=tbl_barang.id_barang WHERE MONTH(tgl_transaksi)='$get' GROUP BY nama_barang");
 		}else{
 
-			$kuantitas=$koneksi->query("SELECT * ,SUM(kuantitas)as kuk,SUM(total)as tot, date_format(tgl_transaksi,'%Y') as cek FROM tbl_transaksi INNER JOIN tbl_barang ON tbl_transaksi.id_barang=tbl_barang.id_barang  GROUP BY nama_barang");
+			$kuantitas=$koneksi->query("SELECT * ,SUM(kuantitas)as kuk,SUM(total)as tot, date_format(tgl_transaksi,'%d %M %Y') as cek FROM tbl_transaksi INNER JOIN tbl_barang ON tbl_transaksi.id_barang=tbl_barang.id_barang  GROUP BY nama_barang");
 
 		}
 		
-
 		while ($bagi = $kuantitas ->fetch_array()){
 
 			?>
@@ -46,7 +43,7 @@
 
 </table>
 <h3>Total : <? echo array_sum($tot); ?> </h3>
-<form name="form" action="print.php" method="get">
+<!-- <form name="form" action="print.php" method="get">
 	<select name="bln">
 		<option selected="selected">BULAN</option>
 		<?php
@@ -60,4 +57,6 @@
 	</select><br><br><br> 
 	<input class="btn btn-primary" type="submit" value="PRINT">
 
-</form>
+</form> -->
+
+<a href="print.php?bln=<? echo $get?>" class="btn btn-primary">Print</a>

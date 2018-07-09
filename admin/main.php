@@ -348,7 +348,7 @@ else
                     }
                     elseif ($_GET['halaman']=="laporan") 
                     {
-                        include 'laporan.php';
+                        include 'laporan1.php';
                     }
                 }
                 else
