@@ -13,29 +13,42 @@
 			<th>Ongir</th>
 			<th>Grand Total</th>
 			<th>Status Bayar</th>
+			<th>Aksi</th>
 			
 		</tr>
 
 	</thead>
 	<tbody>
-		<?php  $no=1; ?>
-		<?php $ambil=$koneksi->query("SELECT * FROM dtl_transaksi "); ?>
-		<?php while ($bagi = $ambil ->fetch_assoc()){ ?>
-		<tr>
-			<td><?php echo $no; ?></td>
-			<td><?php echo $bagi['id_det_transaksi']; ?></td>
-			<td><?php echo $bagi['nama']; ?></td>
-			<td><?php echo $bagi['provinsi']; ?></td>
-			<td><?php echo $bagi['kota']; ?></td>
-			<td><?php echo $bagi['alamat']; ?></td>
-			<td><?php echo $bagi['berat_total']; ?></td>
-			<td><?php echo $bagi['ongkir']; ?></td>
-			<td><?php echo $bagi['grand_total']; ?></td>
-			<td><?php echo $bagi['status_bayar']; ?></td>
-			
+		<?php  $no=1; 
+		 $ambil=$koneksi->query("SELECT * FROM dtl_transaksi"); 
+		while ($bagi = $ambil ->fetch_assoc()){ ?>
+			<tr>
+				<td><?php echo $no; ?></td>
+				<td><?php echo $bagi['id_det_transaksi']; ?></td>
+				<td><?php echo $bagi['nama']; ?></td>
+				<td><?php echo $bagi['provinsi']; ?></td>
+				<td><?php echo $bagi['kota']; ?></td>
+				<td><?php echo $bagi['alamat']; ?></td>
+				<td><?php echo $bagi['berat_total']; ?></td>
+				<td><?php echo $bagi['ongkir']; ?></td>
+				<td><?php echo $bagi['grand_total']; ?></td>
+				<td><?php echo $bagi['status_bayar']; ?></td>
+				<td>
+					<?php 
+					if ($bagi['ver_v'] == 1) { 
+						echo "<a href='_konfirmasi.php?kon=".$bagi['id_det_transaksi']."' class='btn btn-warning'>KONFIRMAIS</a>";
+					}else {
+						
+						echo "<a href='' class='btn-danger btn'>SUKSES</a>";
+					}
+					 ?>
+					
 
-		</tr>
-		<?php $no++; ?>
+				</td>
+
+
+			</tr>
+			<?php $no++; ?>
 		<?php } ?>
 
 	</tbody>

@@ -6,7 +6,7 @@
 		<tr>
 			<th>No</th>
 			<th>Username</th>
-			<th>Password</th>
+			<!-- <th>Password</th> -->
 			<th>Nama</th>
 			<th>Aksi</th>
 		</tr>
@@ -19,11 +19,11 @@
 		<tr>
 			<td><?php echo $no; ?></td>
 			<td><?php echo $bagi['username']; ?></td>
-			<td><?php echo $bagi['password']; ?></td>
+			<!-- <td><?php echo $bagi['password']; ?></td> -->
 			<td><?php echo $bagi['nama']; ?></td>
 			<td>
-				<a href="main.php?halaman=hapusadmin&username=<?php echo $bagi['username'];?>" class="btn-danger btn">Dalete</a>
-				<a href="main.php?halaman=editadmin&username=<?php echo $bagi['username'];?>" class="btn btn-warning">Edit</a>
+				<center><a href="main.php?halaman=hapusadmin&username=<?php echo $bagi['username'];?>" class="btn-danger btn">Dalete</a>
+				<a href="main.php?halaman=editadmin&username=<?php echo $bagi['username'];?>" class="btn btn-warning">Edit</a></center>
 
 			</td>
 

@@ -45,4 +45,4 @@
 	</tbody>
 
 </table>
-<a href="main.php?halaman=tambahtransaksi" class="btn btn-primary">Tambah Transaksi</a>
+<!-- <a href="main.php?halaman=tambahtransaksi" class="btn btn-primary">Tambah Transaksi</a> -->

@@ -47,4 +47,4 @@
 	</tbody>
 
 </table>
-<a href="main.php?halaman=tambahbarang" class="btn btn-primary">Tambah Barang</a>
+<!-- <a href="main.php?halaman=tambahbarang" class="btn btn-primary">Tambah Barang</a> -->
