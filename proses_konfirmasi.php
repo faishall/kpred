@@ -39,35 +39,23 @@ if (isset($_POST['konfirm'])){
 	$rowx = $vw->fetch_array();
 	$nama = $rowx['nama'];
 
-	/*apliaksi*/
-
-	// header("location:index.");
-
-
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer;
 
 // Konfigurasi SMTP
-	$mail->isSMTP();
-	$mail->Host = 'smtp.gmail.com';
-	$mail->SMTPAuth = true;
-	$mail->Username = 'redforce1410@gmail.com';
-	$mail->Password = 'adminredforce@';
-	$mail->SMTPSecure = 'tls';
-	$mail->Port = 587;
+	$mail = new PHPMailer;
+	$mail->isSMTP();                                     
+	$mail->Host = 'mail.togeso.com';  
+	$mail->SMTPAuth = true;                               
+	$mail->Username = 'admin@togeso.com';                
+	$mail->Password = 'admin123#';                           
+	$mail->SMTPSecure = 'tls';                            
+	$mail->Port = 587; 
 
-	$mail->setFrom('redforce1410@gmail.com', 'Admin Redforce');
+	$mail->setFrom('admin@togeso.com', 'Admin Redforce');
 
 // Menambahkan penerima
 	$mail->addAddress('redforce1410@gmail.com');
-
-// Menambahkan beberapa penerima
-//$mail->addAddress('penerima2@contoh.com');
-//$mail->addAddress('penerima3@contoh.com');
-
-// Menambahkan cc atau bcc 
-	// $mail->addCC('cc@contoh.com');
-	// $mail->addBCC('bcc@contoh.com');
 
 // Subjek email
 	$mail->Subject = 'Laporan Transaksi Redforce-Komputer';
@@ -77,7 +65,7 @@ if (isset($_POST['konfirm'])){
 
 // Konten/isi email
 	$mailContent = "<h3>Laporan Konfirmasi Transaksi</h3>
-	<p>Transaki degan Nama : $nama <br> ID Detail Transaksi : $id <br> sudah Dikonfirmasi</p>";
+	<p>Transaki degan Nama : $nama <br> ID Detail Transaksi : $id <br> sudah Di transfer</p>";
 	$mail->Body = $mailContent;
 
 
