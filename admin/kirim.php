@@ -1,14 +1,14 @@
 <?php 
-
 include 'config/koneksi.php';
-$id = $_GET['id'];
 
-$ambil=$koneksi->query("SELECT * FROM tbl_customer JOIN dtl_transaksi ON tbl_customer.nama=dtl_transaksi.nama WHERE id_det_transaksi='$id'"); 
+
+$ambil=$koneksi->query("SELECT * FROM tbl_customer JOIN dtl_transaksi ON tbl_customer.nama=dtl_transaksi.nama WHERE id_det_transaksi='$_POST[id]'"); 
 $bagi = $ambil ->fetch_assoc();
 
 $email = $bagi['email'];
 
 $nama = $bagi['nama'];
+
 
 include '../PHPMailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
@@ -35,9 +35,9 @@ $mail->Subject = 'Redforce Komputer';
 $mail->isHTML(true);
 
 // Konten/isi email
-$mailContent = "<h3>Laporan Konfirmasi Pembayaran</h3>
+$mailContent = "<h3>Laporan Konfirmasi Pengiriman</h3>
 <p>Trimakasi Telah bergabung degan kami<br>
-Transaksi degan <br> Nama ".$nama." <br> ID Transaksi : ".$id." <br>Sudah kami terimah dan Kami akan segerah memproses pengiriman Tunggu Konfirmasi dari kami Trimakasi</p>";
+Transaksi degan <br> Nama ".$nama." <br> Kode Pengiriman : ".$_POST['kode_pengiriaman']." <br>Akan kami segerah kirim ke Alamat Setempat</p>";
 $mail->Body = $mailContent;
 
 
@@ -47,7 +47,8 @@ if(!$mail->send()){
 	exit();
 		// echo 'Mailer Error: ' . $mail->ErrorInfo;
 }else{
-	echo "<script>alert('Pembayaran dan Pengiriman Berhasil Dikonfirmasi pada customer');window.location = 'main.php?halaman=detailtransaksi';</script>";
+	mysqli_query($koneksi, "UPDATE dtl_transaksi SET kode_pengiriaman='$_POST[kode_pengiriaman]' WHERE id_det_transaksi='$_POST[id]'");
+	echo "<script>alert('Pembayaran dan Pengiriman Berhasil Dikonfirmasi pada customer');window.location = 'main.php?halaman=pengiriman';</script>";
 }
 
 ?>

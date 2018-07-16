@@ -45,12 +45,12 @@ if (isset($_POST['konfirm'])){
 // Konfigurasi SMTP
 	$mail = new PHPMailer;
 	$mail->isSMTP();                                     
-	$mail->Host = 'mail.togeso.com';  
+	$mail->Host = 'mail.cruwekch.com';  
 	$mail->SMTPAuth = true;                               
-	$mail->Username = 'admin@togeso.com';                
-	$mail->Password = 'admin123#';                           
+	$mail->Username = 'redforce@cruwekch.com';                 
+	$mail->Password = '*faishal#';                           
 	$mail->SMTPSecure = 'tls';                            
-	$mail->Port = 587; 
+	$mail->Port = 587;   
 
 	$mail->setFrom('admin@togeso.com', 'Admin Redforce');
 

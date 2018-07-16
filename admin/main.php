@@ -196,6 +196,11 @@ else
                                 <i class="fa fa-th"></i> <span>Laporan</span> <small class="badge pull-right bg-green">new</small>
                             </a>
                         </li>
+                         <li>
+                            <a href="main.php?halaman=pengiriman"">
+                                <i class="fa fa-th"></i> <span>Pengiriman</span> <small class="badge pull-right bg-green">new</small>
+                            </a>
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -349,6 +354,10 @@ else
                     elseif ($_GET['halaman']=="laporan") 
                     {
                         include 'laporan1.php';
+                    }
+                    elseif ($_GET['halaman']=="pengiriman") 
+                    {
+                        include 'pengiriman.php';
                     }
                 }
                 else

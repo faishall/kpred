@@ -2,15 +2,15 @@
 include "PHPMailer/PHPMailerAutoload.php";
 
 $mail = new PHPMailer;
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'mail.togeso.com';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'admin@togeso.com';                 // SMTP username
-$mail->Password = 'admin123#';                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+$mail->isSMTP();                                     
+$mail->Host = 'mail.cruwekch.com';  
+$mail->SMTPAuth = true;                               
+$mail->Username = 'redforce@cruwekch.com';                 
+$mail->Password = '*faishal#';                           
+$mail->SMTPSecure = 'tls';                            
 $mail->Port = 587;                
 
-$mail->setFrom('coba@penting.web.id', 'Coba');
+$mail->setFrom('redforce@cruwekch.com', 'Coba');
 
 $mail->addAddress('faishalabrari@gmail.com', 'Panel Ku');
 
