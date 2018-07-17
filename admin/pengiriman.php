@@ -4,7 +4,7 @@
 	<thead>
 		<tr>
 			<th>NAMA</th>
-			<th>ID Detail Transaksi</th>
+			<th>Nomor Resi</th>
 			<th>Aksi</th>
 
 		</tr>
@@ -22,7 +22,7 @@
 				<? }?>
 				</select>
 			</th>
-			<th><input type="text" class="form-control" id="input-payment-name" placeholder="kode pengiriaman" value="" name="kode_pengiriaman"></th>
+			<th><input type="text" class="form-control" id="input-payment-name" placeholder="Nomor Resi" value="" name="kode_pengiriaman"></th>
 			<th> <input type="submit" class="btn btn-primary" id="button-confirm" value="KONFIRMASI PENGIRIRMAN"></th>
 
 		</tr>
@@ -37,7 +37,7 @@
 			<th>ID Detail Transaksi</th>
 			<th>Nama</th>
 			<th>Status Bayar</th>
-			<th>Kode Pengiriaman</th>
+			<th>Nomor Resi Pengiriaman</th>
 
 		</tr>
 	</thead>
